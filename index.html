@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>喫茶店 — サンプルページ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brown:#6b2f1a;
+      --accent:#f6e7d0;
+      --muted:#f9f3ea;
+      --card:#fff;
+      --shadow: 0 6px 18px rgba(50,40,30,0.08);
+      --radius:14px;
+      --maxw:1100px;
+      --gap:24px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Noto Sans JP', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color:#4b2f26;
+      background:var(--muted);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
+    }
+    .container{max-width:var(--maxw);margin:0 auto;padding:40px 20px}
+    header{background:#fff;border-bottom:1px solid #f0e6de}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,#f7d9b6,#ffdcb3);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--brown)}
+    nav ul{display:flex;gap:18px;margin:0;padding:0;list-style:none}
+    nav a{text-decoration:none;color:var(--brown);font-weight:500}
+
+    /* Hero */
+    .hero{position:relative;height:420px;overflow:hidden}
+    .hero img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(0.95) brightness(0.8)}
+    .hero .overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:20px}
+    .hero h1{margin:0;font-size:28px;letter-spacing:0.02em}
+    .hero p{margin:12px 0 0;opacity:0.95}
+    .btn-row{margin-top:18px;display:flex;gap:12px}
+    .btn{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.18);padding:10px 16px;border-radius:8px;color:#fff;text-decoration:none}
+
+    /* Section styles */
+    section{padding:60px 0}
+    .section-title{text-align:center;margin-bottom:24px;color:var(--brown)}
+    .card-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);align-items:start}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow)}
+    .image-lg{width:100%;height:220px;object-fit:cover;border-radius:10px}
+    .small-list{background:var(--accent);padding:16px;border-radius:10px}
+
+    /* Menu */
+    .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .menu-item{background:var(--card);padding:12px;border-radius:10px;box-shadow:var(--shadow);display:flex;gap:12px;align-items:center}
+    .menu-thumb{width:86px;height:60px;border-radius:8px;object-fit:cover}
+    .menu-info h4{margin:0 0 6px 0}
+    .muted{color:#8b6b5a;font-size:14px}
+
+    /* Contact / Cards */
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .map-placeholder{height:180px;border-radius:10px;background:linear-gradient(180deg,#fdeacb,#fff6e6);display:flex;align-items:center;justify-content:center;color:#b07a4d}
+
+    footer{background:var(--brown);color:#fff;padding:28px 20px}
+    .footer-inner{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;gap:18px;align-items:center}
+
+    /* Responsive */
+    @media(max-width:900px){
+      .card-grid{grid-template-columns:1fr}
+      .menu-grid{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+      .hero{height:320px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav container">
+      <div class="brand">
+        <div class="logo">喫</div>
+        <div>
+          <div style="font-weight:700;color:var(--brown)">カフェ こもれび</div>
+          <div style="font-size:12px;color:#a57755">静寂の中で楽しむ一杯の至福</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about">店舗案内</a></li>
+          <li><a href="#menu">メニュー</a></li>
+          <li><a href="#access">アクセス</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="hero image">
+      <div class="overlay">
+        <h1>1978年創業の喫茶店。家のような温かさでお迎えします。</h1>
+        <p>朝8:00〜19:00（水曜定休）</p>
+        <div class="btn-row">
+          <a class="btn" href="#about">営業時間を見る</a>
+          <a class="btn" href="#menu">メニューを見る</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="container">
+      <h2 class="section-title">店内の雰囲気</h2>
+      <div class="card-grid">
+        <div class="card">
+          <img class="image-lg" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="interior">
+          <h3 style="margin-top:12px">落ち着いた店内</h3>
+          <p class="muted">木の温もりと静かな音楽で、ゆったりとした時間をお過ごしください。</p>
+        </div>
+        <div class="card">
+          <div class="small-list">
+            <h4>こだわりのポイント</h4>
+            <ul style="padding-left:18px;margin:8px 0">
+              <li>自家焙煎のコーヒー</li>
+              <li>落ち着く照明と内装</li>
+              <li>手作りの焼き菓子</li>
+            </ul>
+          </div>
+          <div style="height:18px"></div>
+          <blockquote style="margin:0;padding:12px;border-left:4px solid #f0d8b6;background:#fff6ea;border-radius:8px">"昔ながらの空間で、ゆっくりとした時間を提供します。" — マスター</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="container">
+      <h2 class="section-title">メニュー</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <img class="menu-thumb" src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="coffee">
+          <div class="menu-info">
+            <h4>ブレンドコーヒー <small style="color:#b07a4d">¥450</small></h4>
+            <p class="muted">深煎りの香り高いブレンド。やさしい苦味が特徴。</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img class="menu-thumb" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="latte">
+          <div class="menu-info">
+            <h4>カフェラテ <small style="color:#b07a4d">¥480</small></h4>
+            <p class="muted">エスプレッソとスチームミルクのやさしいバランス。</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img class="menu-thumb" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="toast">
+          <div class="menu-info">
+            <h4>モーニングプレート <small style="color:#b07a4d">¥650</small></h4>
+            <p class="muted">トースト、卵、サラダの人気セット。ドリンク付き。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="access" class="container">
+      <h2 class="section-title">店舗情報・アクセス</h2>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>基本情報</h3>
+          <p class="muted">カフェ こもれび</p>
+          <p>〒123-4567 東京都中央区サンプル1-2-3</p>
+          <p>営業時間: 8:00 - 19:00（定休日: 水曜日）</p>
+          <p>電話: 03-1234-5678</p>
+        </div>
+        <div class="card">
+          <h3>アクセス</h3>
+          <div class="map-placeholder">Google Map をここに埋め込めます</div>
+        </div>
+      </div>
+      <div style="margin-top:18px" class="card">
+        <h4>所在地</h4>
+        <div class="map-placeholder">地図のプレースホルダー</div>
+      </div>
+    </section>
+
+    <section id="contact" class="container">
+      <h2 class="section-title">お問い合わせ</h2>
+      <div class="card" style="text-align:center">
+        <p>ご予約・お問い合わせはお電話で受け付けております。</p>
+        <p style="font-weight:700">03-1234-5678</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div style="font-weight:700">カフェ こもれび</div>
+        <div style="font-size:13px;opacity:0.9">© 1978–2025 Cafe Komorebi</div>
+      </div>
+      <div style="font-size:14px;opacity:0.95">営業時間 8:00 - 19:00 / 定休日: 水曜</div>
+    </div>
+  </footer>
+
+  <script>
+    // シンプルなスムーススクロール
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        e.preventDefault();
+        const t = document.querySelector(a.getAttribute('href'));
+        if(t) t.scrollIntoView({behavior:'smooth'});
+      })
+    })
+  </script>
+</body>
+</html>
